@@ -1,12 +1,6 @@
-#first,#second{
-    font-size: 28px;
-    font-family: Helvetica,'Times New Roman',sans-serif;
-}
-#first{
-    background-color: black;
-    color: white;
-}
-#second{
+.container{
     background-color: yellow;
-    color: black;
+    color: red;
+    font-size: 20px;
+    text-align: center;
 }
