@@ -9,12 +9,20 @@
   background-color: #5995DA;  
   padding: 20px 0;
   display:flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .menu {
   border: 1px solid #fff;  /* For debugging */
   width: 900px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+.links{
+    border:1px solid #fff;
+    display: flex;
+    justify-content: flex-end;
+}
+.login{
+    margin-left: 20px;
 }
