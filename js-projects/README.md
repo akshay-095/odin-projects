@@ -1,0 +1,1 @@
+A short project on library. In this project the goal is to be familiar to object.
