@@ -13,6 +13,8 @@ h1{
     border: solid;
     padding: 10px;
     background-color:  rgb(56, 194, 248);
+    max-width: 300px;
+    margin: 20px auto;
 }
 .box{
     font-size: 1.5rem;
@@ -21,11 +23,23 @@ h1{
 #submit{
     font-size: 1.5rem;
     border: none;
-    background-color: rgb(130, 230, 16);
+    background-color: rgba(131, 230, 56, 0.993);
     border-radius: 20px;
+    cursor: pointer;
+}
+#submit:hover{
+    background-color: rgba(131, 230, 26, 0.74);
+    
+}
+#books-container {
+    display: flex;
+    flex-wrap: wrap; /* This allows items to wrap to a new line if they don't fit */
+    gap: 20px; /* This adds space between each book div */
+    justify-content: center; /* This centers the items horizontally */
+    margin-top: 20px;
 }
 .result{
-    margin: 20px;
+    margin: 0;
     box-sizing: content-box;
     border:5px solid;
     width: 350px;
