@@ -8,17 +8,20 @@
 </head>
 <body>
     <h1>Library</h1>    
-    <form>
+    <div id="input">
+        <form>
         <label for="bkno">Book no:</label><br>
-        <input id="bkno" type="text" placeholder="Enter"><br>
+        <input id="bkno" type="text" placeholder="Enter" class="box"><br>
         <label for="book">Book Name:</label><br>
-        <input id="book" type="text" placeholder="Enter"><br>
+        <input id="book" type="text" placeholder="Enter" class="box"><br>
         <label for="author">Author:</label><br>
-        <input id="author" type="text" placeholder="Enter"><br>
+        <input id="author" type="text" placeholder="Enter" class="box"><br>
         <label for="price">Price:</label><br>
-        <input id="price" type="text" placeholder="Enter"><br>
-        <button id="submit">Submit</button>
-    </form>
+        <input id="price" type="text" placeholder="Enter" class="box"><br>
+        <button type="button" id="submit">New Book</button>
+        </form>
+    </div>
+    <div id="books-container"></div> 
     <script src="lib.js"></script>
 </body>
 </html>
