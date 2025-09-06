@@ -1,32 +1,50 @@
 let gameboard =['','','','','','','','',''];
 const select=document.getElementById('select');
-function swap(){
+const boxes=document.querySelectorAll('.box');
+function checkwinner(){
+    const winnercombination=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+    for(const comb of winnercombination){
+        const [a,b,c]=comb;
+        if(gameboard[a]!='' && gameboard[a]===gameboard[b] && gameboard[a]===gameboard[c]){
+            return gameboard[a];
+        }
+    }
+    if(!gameboard.includes('')){
+        return 'draw';
+    }
+    return null
 }
-function game(user1){
-    let user2='';
-    if(user1=='X'){
-        user2='O';
-    }
-    else{
-        user2='X';
-    }
-    console.log(user1,user2);
-    const max=gameboard.length;
-    console.log(max);
-    for(let i=0;i<max;i++){
-        if(i%2==0){
-            gameboard[i]=user1;
+function game(){
+    boxes.forEach((box,index) =>{
+        box.addEventListener('click',()=>{
+            if(gameboard[index]==='' && currentuser!=''){
+            gameboard[index]=currentuser;
+            box.textContent=currentuser;
+            box.style.backgroundColor=(currentuser==='X')? 'red':'blue';
+            const winner=checkwinner();
+            if(winner=='draw'){
+                alert(`it is a ${winner}!!!`)
+                return;
+            }
+            else if(winner!=null){
+                alert(`${winner} has won!!!`)
+                return
+            }
+            currentuser=(currentuser==='X')? 'O':'X';
+            console.log(gameboard);
         }
-        else{
-            gameboard[i]=user2;
-        }
-    }
-    console.log(gameboard);
+        });
+    });
 }
 select.addEventListener('click',()=>{
-    const selectedchoice=document.querySelector('input[name="choice"]:checked').value;
+    const selectedchoice=document.querySelector('input[name="choice"]:checked');
     const board=document.getElementById('board');
-    board.style.display='flex';
-    game(selectedchoice);
-
-})
+    if(selectedchoice){
+        board.style.display='flex';
+        currentuser=selectedchoice.value;
+        game(selectedchoice);
+    }
+    else{
+        alert('please select X or O to start');
+    }
+});
