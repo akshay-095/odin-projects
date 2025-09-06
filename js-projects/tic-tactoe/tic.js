@@ -1,31 +1,32 @@
-const user=["X","O"];
-/*for(let i=0;i<10;i++){
-    const ran=Math.floor(Math.random()*2);
-    console.log(user[ran]);
+let gameboard =['','','','','','','','',''];
+const select=document.getElementById('select');
+function swap(){
 }
-*/
-let arr=[];
-me=['O','O','O'];
-arr.push(me);
-me=['O','X','O'];
-arr.push(me);
-me=['O','X','O'];
-arr.push(me);
-console.log(arr);
-for(let i=0;i<3;i++){
-    let c=0;
-    while(c<3){
-        let v=arr[i][c];
-        console.log(v);
-        for(let j=i;j<3;j++){
-            let d=0;
-            while(d<3){
-                let u=arr[j][d];
-                if(v==u){
-                    break;
-                }
-            }
-        }
-        c++;
+function game(user1){
+    let user2='';
+    if(user1=='X'){
+        user2='O';
     }
+    else{
+        user2='X';
+    }
+    console.log(user1,user2);
+    const max=gameboard.length;
+    console.log(max);
+    for(let i=0;i<max;i++){
+        if(i%2==0){
+            gameboard[i]=user1;
+        }
+        else{
+            gameboard[i]=user2;
+        }
+    }
+    console.log(gameboard);
 }
+select.addEventListener('click',()=>{
+    const selectedchoice=document.querySelector('input[name="choice"]:checked').value;
+    const board=document.getElementById('board');
+    board.style.display='flex';
+    game(selectedchoice);
+
+})
