@@ -9,15 +9,15 @@ h1{
 #container{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    gap: 20px;
 }
 .options{
     border: 5px solid;
     background-color: rgba(255, 255, 46, 0.829);
     border-radius: 100px;
-    margin: auto;
     font-size: 8rem;
     padding: 5px;
-    justify-content: center;
     cursor: pointer;
 }
 #result{

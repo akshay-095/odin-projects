@@ -9,6 +9,13 @@ let cscore=0;
 rdisplay.textContent=`Round:${count}`;
 userscore.textContent=`user score:${uscore}`;
 comscore.textContent=`com score:${cscore}`;
+
+function display(userscore,comscore,result){
+    userscore.textContent=`user score:${uscore}`;
+    comscore.textContent=`com score:${cscore}`;
+    resultdisplay.textContent=result;
+}
+
 function round(user,com){
     let result='';
     console.log(user,com);
@@ -52,18 +59,18 @@ function round(user,com){
             resultdisplay.classList.add('loser');
             break;
         default:
+            comscore.classList.remove('winner','loser');
             userscore.classList.remove('winner','loser');
             resultdisplay.classList.remove('winner','loser');
             cscore++;
             uscore++;
             break;
     }
-    userscore.textContent=`user score:${uscore}`;
-    comscore.textContent=`com score:${cscore}`;
-    resultdisplay.textContent=result;
+    display(userscore,comscore,result);
 }
+
 function play(user){
-    if(count<6){
+    if(count<=5){
         count++;
         const index=Math.floor(Math.random()*3);
         const com=choice[index];
@@ -73,6 +80,14 @@ function play(user){
         }
     }
     else{
+        let gameover='';
+        if(uscore>cscore){
+            gameover='The user won!!'
+        }
+        else{
+            gameover='The computer won!!'
+        }
+        alert(gameover);
         location.reload();
     }
 }
