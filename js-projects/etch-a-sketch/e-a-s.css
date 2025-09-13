@@ -1,1 +1,23 @@
-
+.container{
+    display: flex;
+    justify-content: center;
+    width: 400px; /* Example size */
+    height: 400px;
+    border: 1px solid black;
+    padding: 10px 10px;
+    flex-direction: column;
+    margin: auto auto;
+    align-items: center;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.square{
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: auto;
+    border: 2px solid;
+    
+}
